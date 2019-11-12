@@ -805,6 +805,7 @@ struct mdss_panel_info {
 	int esd_err_irq_gpio;
 	int esd_err_irq;
 	bool is_ce_mode; /* CE video format */
+	u8 csc_type;
 	struct mdss_rect roi;
 	struct mdss_dsi_dual_pu_roi dual_roi;
 	int pwm_pmic_gpio;
@@ -1021,6 +1022,7 @@ struct mdss_panel_data {
 	 * and teardown.
 	 */
 	int (*event_handler) (struct mdss_panel_data *pdata, int e, void *arg);
+	enum mdss_mdp_csc_type (*get_csc_type)(struct mdss_panel_data *pdata);
 	struct device_node *(*get_fb_node)(struct platform_device *pdev);
 
 	struct list_head timings_list;
