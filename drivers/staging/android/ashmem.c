@@ -394,7 +394,6 @@ static int ashmem_mmap(struct file *file, struct vm_area_struct *vma)
 		mutex_unlock(&mmap_lock);
 
 		if (do_setup && ret)
-			return ret;
 	}
 	get_file(asma->file);
 
