@@ -1,2 +1,37 @@
 make[1]: 进入目录“/root/sagit/out”
+  GEN     ./Makefile
+scripts/kconfig/conf  --silentoldconfig Kconfig
+  CHK     include/config/kernel.release
+  GEN     ./Makefile
+  CHK     include/generated/uapi/linux/version.h
+  CHK     scripts/mod/devicetable-offsets.h
+  Using .. as source for kernel
+  CHK     include/generated/utsrelease.h
+  CHK     include/generated/timeconst.h
+  CHK     include/generated/bounds.h
+  CHK     include/generated/asm-offsets.h
+  CALL    ../scripts/checksyscalls.sh
+make[2]: “include/generated/vdso-offsets.h”已是最新。
+make[2]: “include/generated/vdso32-offsets.h”已是最新。
+  CHK     include/generated/compile.h
+  CHK     kernel/config_data.h
+  LINK    vmlinux
+  GEN     .version
+  CHK     include/generated/compile.h
+  UPD     include/generated/compile.h
+  CC      init/version.o
+  AR      init/built-in.a
+  AR      built-in.a
+  MODPOST vmlinux.o
+  KSYM    .tmp_kallsyms1.o
+  KSYM    .tmp_kallsyms2.o
+  LD      vmlinux
+  SORTEX  vmlinux
+  SYSMAP  System.map
+  OBJCOPY arch/arm64/boot/Image
+  DTC     arch/arm64/boot/dts/qcom/sagit-msm8998-mtp.dtb
+  DTC     arch/arm64/boot/dts/qcom/sagit-msm8998-v2-mtp.dtb
+  DTC     arch/arm64/boot/dts/qcom/sagit-msm8998-v2.1-mtp.dtb
+  GZIP    arch/arm64/boot/Image.gz
+  CAT     arch/arm64/boot/Image.gz-dtb
 make[1]: 离开目录“/root/sagit/out”

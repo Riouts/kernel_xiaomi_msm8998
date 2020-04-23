@@ -358,7 +358,6 @@ static int ashmem_file_setup(struct ashmem_area *asma,
 
 static int ashmem_mmap(struct file *file, struct vm_area_struct *vma)
 {
-	static struct file_operations vmfile_fops;
 	struct ashmem_area *asma = file->private_data;
 	unsigned long prot_mask;
 	size_t size;
@@ -394,6 +393,7 @@ static int ashmem_mmap(struct file *file, struct vm_area_struct *vma)
 		mutex_unlock(&mmap_lock);
 
 		if (do_setup && ret)
+			return ret;
 	}
 	get_file(asma->file);
 
