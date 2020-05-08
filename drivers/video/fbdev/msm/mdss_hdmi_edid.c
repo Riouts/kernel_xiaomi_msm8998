@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 /* Copyright (c) 2010-2017,2019-2020, The Linux Foundation. All rights reserved.
+=======
+/* Copyright (c) 2010-2020, The Linux Foundation. All rights reserved.
+>>>>>>> 32215ead03a0... Merge tag 'LA.UM.8.4.r1-05300-8x98.0' into kernel.lnx.4.4.r39-rel
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License version 2 and
